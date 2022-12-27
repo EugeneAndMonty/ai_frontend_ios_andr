@@ -29,8 +29,6 @@ class AppState extends State<App> {
     'Cartoon': 'images/cartoon.jpg',
   };
 
-  var tr_fl = [false, false, false, false, false, false, false];
-
   List data = [];
 
   @override
