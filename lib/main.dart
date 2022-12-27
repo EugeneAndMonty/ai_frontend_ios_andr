@@ -11,14 +11,14 @@ class App extends StatefulWidget {
 }
 
 class AppState extends State<App> {
-  // bool _isSelected = false;
-  // funcFocus() => setState(() {
-  //       if (_isSelected == true) {
-  //         _isSelected = false;
-  //       } else {
-  //         _isSelected = true;
-  //       }
-  //     });
+  bool _isSelected = false;
+  funcFocus() => setState(() {
+        if (_isSelected == true) {
+          _isSelected = false;
+        } else {
+          _isSelected = true;
+        }
+      });
 
   var elements1 = {
     'Cinematic': 'images/cinem.jpg',
