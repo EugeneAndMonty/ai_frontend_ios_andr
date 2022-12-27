@@ -12,7 +12,7 @@ class HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 250,
+      height: 200,
       width: double.infinity,
       child: GridView.count(
         crossAxisCount: 1,
@@ -33,13 +33,14 @@ class HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
                               focusNode.unfocus();
                             } else {
                               focusNode.requestFocus();
+                              print(pdata[0]); //holding data from the event
                             }
                           },
                           child: Container(
                               decoration: BoxDecoration(
                                   border: hasFocus
                                       ? Border.all(
-                                          width: 5, color: Colors.white)
+                                          width: 3, color: Colors.white)
                                       : null, //useState Custom Hook
                                   borderRadius:
                                       BorderRadius.all(Radius.circular(15)),

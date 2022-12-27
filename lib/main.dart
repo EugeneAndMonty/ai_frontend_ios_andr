@@ -1,4 +1,6 @@
+import 'text_input.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'header.dart';
 import 'hor_scroll_widget.dart';
 
@@ -49,9 +51,10 @@ class AppState extends State<App> {
             ),
             body: Header(
               child: ListView(children: [
+                textInput(), // text input field holding data on submit
                 HorizontalScrollWidget(
                   data: data,
-                )
+                ) //dynamically presenting data, holding value
               ]),
             )));
   }
