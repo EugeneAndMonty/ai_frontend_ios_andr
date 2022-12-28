@@ -8,12 +8,15 @@ class HorizontalScrollWidget extends StatefulWidget {
   State<HorizontalScrollWidget> createState() => HorizontalScrollWidgetState();
 }
 
+var data_from_user_style;
+
 class HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      height: 210,
       width: double.infinity,
+      margin: EdgeInsets.only(bottom: 20, top: 5),
       child: GridView.count(
         crossAxisCount: 1,
         scrollDirection: Axis.horizontal,
@@ -33,7 +36,9 @@ class HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
                               focusNode.unfocus();
                             } else {
                               focusNode.requestFocus();
-                              print(pdata[0]); //holding data from the event
+                              data_from_user_style = pdata[0];
+                              print(
+                                  data_from_user_style); //holding data from the event
                             }
                           },
                           child: Container(

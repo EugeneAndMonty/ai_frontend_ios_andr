@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'header.dart';
 import 'hor_scroll_widget.dart';
+import 'chooseStyle.dart';
+import 'AspectRatio.dart';
+import 'chooseSize.dart';
 
 void main() => runApp(const App());
 
@@ -51,10 +54,13 @@ class AppState extends State<App> {
             ),
             body: Header(
               child: ListView(children: [
-                textInput(), // text input field holding data on submit
+                textInput(),
+                ChooseStyle(), // text input field holding data on submit
                 HorizontalScrollWidget(
                   data: data,
-                ) //dynamically presenting data, holding value
+                ), //dynamically presenting data, holding value
+                ChooseSize(),
+                AspectRation() //need to create dynamically with selector handle with UseEffect
               ]),
             )));
   }

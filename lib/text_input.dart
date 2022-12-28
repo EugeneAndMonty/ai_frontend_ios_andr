@@ -23,7 +23,8 @@ class textInput extends StatelessWidget {
                     borderSide:
                         const BorderSide(width: 2.0, color: Colors.white),
                     borderRadius: BorderRadius.all(Radius.circular(5))),
-                hintText: 'What would you like to see?',
-                hintStyle: TextStyle(fontSize: 22, color: Colors.white))));
+                hintText:
+                    'What would you like to see?\nDescribe what you want in details.',
+                hintStyle: TextStyle(fontSize: 18, color: Colors.white))));
   }
 }
