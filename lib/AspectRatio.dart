@@ -60,11 +60,11 @@ class _AspectRatioChoiceState extends State<AspectRatioChoice> {
                       color: Color.fromARGB(132, 49, 55, 58),
                       border: pdata_ratio.contains(true)
                           ? Border.all(
-                              width: 3,
+                              width: 2,
                               color: Colors.white,
                               strokeAlign: StrokeAlign.outside)
                           : null,
-                      borderRadius: BorderRadius.all(Radius.circular(5))),
+                      borderRadius: BorderRadius.all(Radius.circular(9))),
                   margin: EdgeInsets.symmetric(horizontal: 7),
                   width: pdata_ratio[1][0],
                   height: pdata_ratio[1][1],

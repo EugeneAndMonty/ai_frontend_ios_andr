@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'header.dart';
-import 'hor_scroll_widget.dart';
+import 'horizontalScrollWidget.dart';
 import 'chooseStyle.dart';
-import 'AspectRatio.dart';
+import 'aspectRatio.dart';
 import 'chooseSize.dart';
 import 'dummy_data.dart';
-import 'text_input.dart';
+import 'textInput.dart';
 
 void main() {
   runApp(const App());
