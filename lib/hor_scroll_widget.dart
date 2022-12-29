@@ -36,9 +36,8 @@ class HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
                               focusNode.unfocus();
                             } else {
                               focusNode.requestFocus();
-                              data_from_user_style = pdata[0];
-                              print(
-                                  data_from_user_style); //holding data from the event
+                              data_from_user_style =
+                                  pdata[0]; //holding data from the event
                             }
                           },
                           child: Container(

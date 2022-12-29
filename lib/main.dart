@@ -1,4 +1,3 @@
-import 'text_input.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'header.dart';
@@ -6,8 +5,13 @@ import 'hor_scroll_widget.dart';
 import 'chooseStyle.dart';
 import 'AspectRatio.dart';
 import 'chooseSize.dart';
+import 'dummy_data.dart';
+import 'text_input.dart';
 
-void main() => runApp(const App());
+void main() {
+  runApp(const App());
+  WidgetsFlutterBinding.ensureInitialized();
+}
 
 class App extends StatefulWidget {
   const App({super.key});
@@ -16,30 +20,20 @@ class App extends StatefulWidget {
 }
 
 class AppState extends State<App> {
-  // bool _isSelected = false;
-  // funcFocus() => setState(() {
-  //       if (_isSelected == true) {
-  //         _isSelected = false;
-  //       } else {
-  //         _isSelected = true;
-  //       }
-  //     });
-
-  var elements1 = {
-    'Cinematic': 'images/cinem.jpg',
-    'Anime': 'images/anime.jpg',
-    'Sketch': 'images/sketch.jpg',
-    'Render': 'images/render.jpg',
-    'Art': 'images/art.jpg',
-    'Cartoon': 'images/cartoon.jpg',
-  };
-
-  List data = [];
+  List data_styles = [];
+  List data_ratio = [];
 
   @override
   Widget build(BuildContext context) {
     elements1.forEach((key, value) => {
-          data.length != elements1.length ? data.add([key, value]) : null
+          data_styles.length != elements1.length
+              ? data_styles.add([key, value])
+              : null
+        });
+    elements2.forEach((key, value) => {
+          data_ratio.length != elements2.length
+              ? data_ratio.add([key, value])
+              : null
         });
 
     return MaterialApp(
@@ -57,10 +51,27 @@ class AppState extends State<App> {
                 textInput(),
                 ChooseStyle(), // text input field holding data on submit
                 HorizontalScrollWidget(
-                  data: data,
-                ), //dynamically presenting data, holding value
+                  data: data_styles,
+                ), //dynamically generated data, holding value at data_from_user_style
                 ChooseSize(),
-                AspectRation() //need to create dynamically with selector handle with UseEffect
+                AspectRatioChoice(
+                  data: data_ratio,
+                ), //dynamically generated data, holding value at data_from_ratio
+                GestureDetector(
+                  //test data receiver from other widgets onSubmit
+                  onTap: () {
+                    print([data_from_user_style, data_from_ratio]);
+                  },
+                  child: Container(
+                    color: Colors.red,
+                    height: 50,
+                    child: Align(
+                        child: Text(
+                      'Submit',
+                      textAlign: TextAlign.center,
+                    )),
+                  ),
+                ),
               ]),
             )));
   }
