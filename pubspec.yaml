@@ -78,7 +78,7 @@ flutter:
   fonts:
     - family: Oswald
       fonts:
-        - asset: fonts/Oswald Semi Bold.ttf
+        - asset: fonts/Oswald-SemiBold.ttf
           # style: Bold
     # - family: Trajan Pro
     #   fonts:

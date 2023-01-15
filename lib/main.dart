@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 import 'header.dart';
 import 'horizontalScrollWidget.dart';
 import 'chooseStyle.dart';
-import 'aspectRatio.dart';
+import 'AspectRatio.dart';
 import 'chooseSize.dart';
 import 'dummy_data.dart';
 import 'textInput.dart';
@@ -41,7 +41,7 @@ class AppState extends State<App> {
             appBar: AppBar(
               backgroundColor: Color.fromARGB(255, 49, 55, 58),
               leading: Container(
-                child: Image(image: AssetImage('images/fake_white.png')),
+                child: Image(image: AssetImage('images/logo.png')),
                 padding: EdgeInsets.only(left: 20),
               ),
               leadingWidth: 140,

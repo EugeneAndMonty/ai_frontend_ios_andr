@@ -1,9 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-
 var elements1 = {
-  'Cinematic': 'images/cinem.jpg',
+  'Cinematic': 'images/cinema.jpg',
   'Anime': 'images/anime.jpg',
   'Sketch': 'images/sketch.jpg',
   'Render': 'images/render.jpg',
