@@ -1,3 +1,4 @@
+import 'package:ai_frontend/chooseNumber.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/services.dart';
 import 'header.dart';
@@ -57,17 +58,29 @@ class AppState extends State<App> {
                 AspectRatioChoice(
                   data: data_ratio,
                 ), //dynamically generated data, holding value at data_from_ratio
+                ChooseNumber(),
                 GestureDetector(
                   //test data receiver from other widgets onSubmit
                   onTap: () {
-                    print([data_from_user_style, data_from_ratio]);
+                    print([
+                      data_from_user_style,
+                      data_from_ratio,
+                      numberOfPictures.round().toInt()
+                    ]);
                   },
                   child: Container(
-                    color: Colors.red,
-                    height: 50,
+                    decoration: BoxDecoration(
+                        color: Colors.red,
+                        border: Border.all(width: 2, color: Colors.white),
+                        borderRadius: BorderRadius.all(Radius.circular(5))),
+                    height: 60,
                     child: Align(
                         child: Text(
                       'Submit',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'Oswald',
+                          fontSize: 30),
                       textAlign: TextAlign.center,
                     )),
                   ),
