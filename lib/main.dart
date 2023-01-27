@@ -63,6 +63,7 @@ class AppState extends State<App> {
                   //test data receiver from other widgets onSubmit
                   onTap: () {
                     print([
+                      data_from_text,
                       data_from_user_style,
                       data_from_ratio,
                       numberOfPictures.round().toInt()

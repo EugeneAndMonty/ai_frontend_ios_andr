@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
 
-class textInput extends StatelessWidget {
+class textInput extends StatefulWidget {
   const textInput({super.key});
 
   @override
+  State<textInput> createState() => _textInputState();
+}
+
+String? data_from_text;
+
+class _textInputState extends State<textInput> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
+    return  Container(
         margin: EdgeInsets.all(4),
         child: TextField(
+          onChanged: (value) {
+             if (value.length == 0) {data_from_text = null;} else {data_from_text = value;}
+          },
             keyboardAppearance: Brightness.dark,
             style: TextStyle(fontSize: 22, color: Colors.white),
             maxLines: 5,

@@ -62,7 +62,7 @@ class _AspectRatioChoiceState extends State<AspectRatioChoice> {
                           ? Border.all(
                               width: 2,
                               color: Colors.white,
-                              strokeAlign: StrokeAlign.outside)
+                              strokeAlign: BorderSide.strokeAlignOutside)
                           : null,
                       borderRadius: BorderRadius.all(Radius.circular(9))),
                   margin: EdgeInsets.symmetric(horizontal: 7),
