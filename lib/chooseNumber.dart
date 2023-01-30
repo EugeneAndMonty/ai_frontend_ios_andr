@@ -13,9 +13,17 @@ class _chooseNumberState extends State<ChooseNumber> {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Text(
-        'Number of pictures:' + numberOfPictures.round().toInt().toString(),
-        style: TextStyle(fontSize: 18),
+      Container(
+        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+        width: double.infinity,
+        child: Text(          
+          'Number of pictures: ' + numberOfPictures.round().toInt().toString(), textAlign: TextAlign.left,
+          style: TextStyle(
+                letterSpacing: 0.3,
+                fontSize: 22,
+                fontWeight: FontWeight.w700,
+                color: Colors.white),
+        ),
       ),
       Slider(
         thumbColor: Colors.white,

@@ -25,7 +25,7 @@ class _textInputState extends State<textInput> {
             keyboardAppearance: Brightness.dark,
             style: TextStyle(fontSize: 22, color: Colors.white),
             maxLines: 5,
-            maxLength: 250,
+            // maxLength: 250,
             decoration: InputDecoration(
                 filled: true,
                 fillColor: Color.fromARGB(39, 69, 70, 71),

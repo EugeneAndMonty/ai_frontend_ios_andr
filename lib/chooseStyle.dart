@@ -6,7 +6,7 @@ class ChooseStyle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         child: Text(
           'Choose style:',
           style: TextStyle(

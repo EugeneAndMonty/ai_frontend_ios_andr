@@ -25,7 +25,6 @@ class HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
     return Container(
       height: 180,
       width: double.infinity,
-      margin: EdgeInsets.only(bottom: 20, top: 5),
       child: GridView.count(
         crossAxisCount: 1,
         scrollDirection: Axis.horizontal,
@@ -72,7 +71,7 @@ class HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
                               image: AssetImage(
                                   pdata[1]), //dynamically generated
                               fit: BoxFit.fitWidth)),
-                      margin: EdgeInsets.all(4),
+                      margin: EdgeInsets.all(3),
                       child: Align(
                         alignment: Alignment.bottomCenter,
                         child: Container(
