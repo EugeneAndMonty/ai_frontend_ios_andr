@@ -15,6 +15,10 @@ class _textInputState extends State<textInput> {
     return  Container(
         margin: EdgeInsets.all(4),
         child: TextField(
+          onTapOutside: (event) {
+            FocusScope.of(context).unfocus();
+            new TextEditingController().clear();
+          },
           onChanged: (value) {
              if (value.length == 0) {data_from_text = null;} else {data_from_text = value;}
           },

@@ -32,7 +32,6 @@ class _AspectRatioChoiceState extends State<AspectRatioChoice> {
                 onTap: () {
                   var x;
                   var y;
-
                   funcFocus();
                   data_from_ratio = pdata_ratio[0];
                   if (isSelected) {
