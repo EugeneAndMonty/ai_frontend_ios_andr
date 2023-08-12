@@ -1,6 +1,7 @@
+import 'package:ai_frontend/frame/custom_button.dart';
 import 'package:ai_frontend/chooseNumber.dart';
+import 'package:ai_frontend/styles.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
 import 'header.dart';
 import 'horizontalScrollWidget.dart';
 import 'chooseStyle.dart';
@@ -26,16 +27,12 @@ class AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
-    elements1.forEach((key, value) => {
-          data_styles.length != elements1.length
-              ? data_styles.add([key, value])
-              : null
-        });
-    elements2.forEach((key, value) => {
-          data_ratio.length != elements2.length
-              ? data_ratio.add([key, value])
-              : null
-        });
+    elements1.forEach((key, value) => data_styles.length != elements1.length
+        ? data_styles.add([key, value])
+        : null);
+    elements2.forEach((key, value) => data_ratio.length != elements2.length
+        ? data_ratio.add([key, value])
+        : null);
 
     return MaterialApp(
         home: Scaffold(
@@ -48,7 +45,7 @@ class AppState extends State<App> {
               leadingWidth: 140,
             ),
             body: Header(
-              child: ListView(children: [
+              child: Column(children: [
                 textInput(),
                 ChooseStyle(), // text input field holding data on submit
                 HorizontalScrollWidget(
@@ -59,9 +56,12 @@ class AppState extends State<App> {
                   data: data_ratio,
                 ), //dynamically generated data, holding value at data_from_ratio
                 ChooseNumber(),
-                GestureDetector(
-                  //test data receiver from other widgets onSubmit
-                  onTap: () {
+                CustomButton(
+                  fontSize: fontSizeMainScreenButton,
+                  lable: labelSubmitButton,
+                  height: heightMainScrennButton,
+                  width: widthMainScreenButton,
+                  onPressed: () {
                     print([
                       data_from_text,
                       data_from_user_style,
@@ -69,22 +69,6 @@ class AppState extends State<App> {
                       numberOfPictures.round().toInt()
                     ]);
                   },
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.red,
-                        border: Border.all(width: 2, color: Colors.white),
-                        borderRadius: BorderRadius.all(Radius.circular(5))),
-                    height: 60,
-                    child: Align(
-                        child: Text(
-                      'Submit',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Oswald',
-                          fontSize: 30),
-                      textAlign: TextAlign.center,
-                    )),
-                  ),
                 ),
               ]),
             )));

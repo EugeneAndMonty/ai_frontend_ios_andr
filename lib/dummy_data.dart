@@ -14,3 +14,5 @@ var elements2 = {
   '9:16': [71.2, 40.0],
   '16:9': [40.0, 71.2],
 };
+
+const String labelSubmitButton = 'Submit';
