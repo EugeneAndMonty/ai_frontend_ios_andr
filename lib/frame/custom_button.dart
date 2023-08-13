@@ -1,4 +1,4 @@
-import 'package:ai_frontend/styles.dart';
+import 'package:ai_frontend/frame/styles/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -7,7 +7,6 @@ class CustomButton extends StatelessWidget {
   final double height;
   final double width;
   final double fontSize;
-
   CustomButton(
       {super.key,
       required this.onPressed,
@@ -26,7 +25,7 @@ class CustomButton extends StatelessWidget {
           fixedSize: Size(width, height),
           splashFactory: NoSplash.splashFactory),
       onPressed: onPressed,
-      child: Text(lable, style: fontStyleOswaldWhite(fontSize)),
+      child: Text(lable, style: customFontStyle(fontSize)),
     );
   }
 }

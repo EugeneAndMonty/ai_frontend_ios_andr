@@ -22,8 +22,8 @@ class Header extends Container {
         colors: [
           Color.fromARGB(184, 250, 230, 52),
           Color.fromARGB(147, 244, 67, 54),
-          Color.fromARGB(165, 63, 81, 181),
-          Color.fromARGB(179, 0, 150, 135),
+          Color.fromARGB(164, 58, 59, 66),
+          Color.fromARGB(179, 57, 68, 67),
         ],
       )),
       child: child,

@@ -16,22 +16,22 @@ class _chooseNumberState extends State<ChooseNumber> {
       Container(
         margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         width: double.infinity,
-        child: Text(          
-          'Number of pictures: ' + numberOfPictures.round().toInt().toString(), textAlign: TextAlign.left,
+        child: Text(
+          'Number of pictures: ' + numberOfPictures.round().toInt().toString(),
           style: TextStyle(
-                letterSpacing: 0.3,
-                fontSize: 22,
-                fontWeight: FontWeight.w700,
-                color: Colors.white),
+              letterSpacing: 0.3,
+              fontSize: 22,
+              fontWeight: FontWeight.w700,
+              color: Colors.white),
         ),
       ),
       Slider(
         thumbColor: Colors.white,
         activeColor: Colors.white,
-        inactiveColor: Color.fromARGB(85, 255, 255, 255),
+        inactiveColor: Color.fromARGB(12, 255, 255, 255),
         min: 1,
-        max: 4,
-        divisions: 3,
+        max: 6,
+        //divisions: 5,
         value: numberOfPictures,
         onChanged: (value) {
           setState(() {
