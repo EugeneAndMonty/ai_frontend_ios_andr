@@ -1,4 +1,4 @@
-import 'package:ai_frontend/frame/styles/styles.dart';
+import 'package:ai_frontend/styles/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -20,12 +20,15 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
           elevation: 1,
-          side: BorderSide(color: whiteColor),
+          side: BorderSide(color: whiteColorRegular),
           backgroundColor: redColor,
           fixedSize: Size(width, height),
           splashFactory: NoSplash.splashFactory),
       onPressed: onPressed,
-      child: Text(lable, style: customFontStyle(fontSize)),
+      child: Text(
+        lable,
+        style: customFontStyle(fontSize, FontWeight.w600, whiteColorRegular),
+      ),
     );
   }
 }

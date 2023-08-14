@@ -1,11 +1,3 @@
-var elements1 = {
-  'Cinematic': 'images/cinema.jpg',
-  'Anime': 'images/anime.jpg',
-  'Sketch': 'images/sketch.jpg',
-  'Render': 'images/render.jpg',
-  'Art': 'images/art.jpg',
-  'Cartoon': 'images/cartoon.jpg',
-};
 
 var elements2 = {
   '1:1': [60.0, 60.0],
@@ -15,7 +7,7 @@ var elements2 = {
   '16:9': [40.0, 71.2],
 };
 
-const String labelSubmitButton = 'get image';
+const String labelSubmitButton = 'get started';
 
 List<Map> chooseStyleIcons = [
   {'icon': 'Cinematic', 'link': 'images/cinema.jpg'},

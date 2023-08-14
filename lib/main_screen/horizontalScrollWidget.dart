@@ -1,12 +1,13 @@
-import 'package:ai_frontend/frame/styles/styles.dart';
+import 'package:ai_frontend/styles/styles.dart';
 import 'package:ai_frontend/initial_data.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalScrollWidget extends StatefulWidget {
-  final data;
   final List<Map> chooseStyleIcons;
-  const HorizontalScrollWidget(
-      {super.key, this.data, required this.chooseStyleIcons});
+  const HorizontalScrollWidget({
+    super.key,
+    required this.chooseStyleIcons,
+  });
 
   @override
   State<HorizontalScrollWidget> createState() => HorizontalScrollWidgetState();
@@ -42,30 +43,29 @@ class HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
                 child: Container(
                     decoration: BoxDecoration(
                         border: style.containsValue(true)
-                            ? Border.all(
-                                width: 2,
-                                color: Colors.white,
-                                strokeAlign: BorderSide.strokeAlignOutside)
+                            ? borderForChooseStyleIcons
                             : null,
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                         image: DecorationImage(
                             image: AssetImage(style['link']),
                             fit: BoxFit.fitWidth)),
-                    margin: EdgeInsets.all(3),
+                    margin: EdgeInsets.all(marginBetweenChooseStyleIcons),
                     child: Align(
                       alignment: Alignment.bottomCenter,
                       child: Container(
-                          padding: EdgeInsets.all(5),
+                          padding:
+                              EdgeInsets.all(paddingForTitleChooseStyleIcons),
                           width: double.infinity,
                           decoration: BoxDecoration(
-                              color: Color.fromARGB(238, 61, 59, 59),
+                              color: grayColor,
                               borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(15),
                                   bottomRight: Radius.circular(15))),
                           child: Text(
                             style['icon'],
                             textAlign: TextAlign.center,
-                            style: customFontStyle(20),
+                            style: customFontStyle(midSizeFont, FontWeight.w500,
+                                whiteColorRegular),
                           )),
                     )));
           }),
