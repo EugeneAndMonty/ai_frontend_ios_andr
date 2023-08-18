@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
-class textInput extends StatefulWidget {
-  const textInput({super.key});
+class TextInput extends StatefulWidget {
+  const TextInput({super.key});
 
   @override
-  State<textInput> createState() => _textInputState();
+  State<TextInput> createState() => _TextInputState();
 }
 
-String? data_from_text;
-
-class _textInputState extends State<textInput> {
+class _TextInputState extends State<TextInput> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -20,11 +18,7 @@ class _textInputState extends State<textInput> {
               new TextEditingController().clear();
             },
             onChanged: (value) {
-              if (value.length == 0) {
-                data_from_text = null;
-              } else {
-                data_from_text = value;
-              }
+              print(value);
             },
             keyboardAppearance: Brightness.dark,
             style: TextStyle(fontSize: 22, color: Colors.white),

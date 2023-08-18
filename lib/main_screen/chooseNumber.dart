@@ -1,44 +1,37 @@
+// ignore_for_file: must_be_immutable
+import 'package:ai_frontend/initial_data.dart';
+import 'package:ai_frontend/main_screen/choose_number_text.dart';
 import 'package:flutter/material.dart';
 
 class ChooseNumber extends StatefulWidget {
-  const ChooseNumber({super.key});
+  late double props; //refactor
+  ChooseNumber({super.key, required this.props});
 
   @override
   State<ChooseNumber> createState() => _chooseNumberState();
 }
 
-double numberOfPictures = 1.0;
-
 class _chooseNumberState extends State<ChooseNumber> {
+  chooseNumberOfPictures(value) => setState(() {
+        widget.props = value;
+      });
+
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Container(
-        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-        width: double.infinity,
-        child: Text(
-          'Number of pictures: ' + numberOfPictures.round().toInt().toString(),
-          style: TextStyle(
-              letterSpacing: 0.3,
-              fontSize: 22,
-              fontWeight: FontWeight.w700,
-              color: Colors.white),
-        ),
-      ),
       Slider(
         thumbColor: Colors.white,
         activeColor: Colors.white,
         inactiveColor: Color.fromARGB(12, 255, 255, 255),
         min: 1,
         max: 6,
-        //divisions: 5,
-        value: numberOfPictures,
+        value: widget.props,
         onChanged: (value) {
-          setState(() {
-            numberOfPictures = value;
-          });
+          chooseNumberOfPictures(value);
+          print(numberOfPictures);
         },
-      ),
+      ),      ChooseNumberText(props: widget.props),
+
     ]);
   }
 }

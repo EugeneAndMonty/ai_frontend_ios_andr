@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
   final void Function()? onPressed;
-  final String lable;
+  final String label;
   final double height;
   final double width;
   final double fontSize;
   CustomButton(
       {super.key,
       required this.onPressed,
-      required this.lable,
+      required this.label,
       this.height = double.infinity,
       this.width = double.infinity,
       required this.fontSize});
@@ -26,7 +26,7 @@ class CustomButton extends StatelessWidget {
           splashFactory: NoSplash.splashFactory),
       onPressed: onPressed,
       child: Text(
-        lable,
+        label,
         style: customFontStyle(fontSize, FontWeight.w600, whiteColorRegular),
       ),
     );

@@ -14,7 +14,6 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(4),
       width: double.infinity,
       height: double.infinity,
       decoration: BoxDecoration(

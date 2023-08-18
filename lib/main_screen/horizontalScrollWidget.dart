@@ -1,27 +1,24 @@
 import 'package:ai_frontend/styles/styles.dart';
-import 'package:ai_frontend/initial_data.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalScrollWidget extends StatefulWidget {
-  final List<Map> chooseStyleIcons;
+  final List<Map> props;
   const HorizontalScrollWidget({
     super.key,
-    required this.chooseStyleIcons,
+    required this.props,
   });
 
   @override
   State<HorizontalScrollWidget> createState() => HorizontalScrollWidgetState();
 }
 
-var data_from_user_style;
-
 class HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
   late String _nameMatch;
   focusOnChooseStyleIcons() => setState(() {
-        for (var style in chooseStyleIcons) {
-          style.containsValue(_nameMatch) && !style.containsKey('highlighted')
-              ? style['highlighted'] = true
-              : style.remove('highlighted');
+        for (var prop in widget.props) {
+          prop.containsValue(_nameMatch) && !prop.containsKey('highlighted')
+              ? prop['highlighted'] = true
+              : prop.remove('highlighted');
         }
       });
 
@@ -34,20 +31,20 @@ class HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
         crossAxisCount: 1,
         scrollDirection: Axis.horizontal,
         children: [
-          ...widget.chooseStyleIcons.map((style) {
+          ...widget.props.map((prop) {
             return GestureDetector(
                 onTap: () {
-                  _nameMatch = style['icon'];
+                  _nameMatch = prop['icon'];
                   focusOnChooseStyleIcons();
                 },
                 child: Container(
                     decoration: BoxDecoration(
-                        border: style.containsValue(true)
+                        border: prop.containsValue(true)
                             ? borderForChooseStyleIcons
                             : null,
                         borderRadius: BorderRadius.all(Radius.circular(15)),
                         image: DecorationImage(
-                            image: AssetImage(style['link']),
+                            image: AssetImage(prop['link']),
                             fit: BoxFit.fitWidth)),
                     margin: EdgeInsets.all(marginBetweenChooseStyleIcons),
                     child: Align(
@@ -62,7 +59,7 @@ class HorizontalScrollWidgetState extends State<HorizontalScrollWidget> {
                                   bottomLeft: Radius.circular(15),
                                   bottomRight: Radius.circular(15))),
                           child: Text(
-                            style['icon'],
+                            prop['icon'],
                             textAlign: TextAlign.center,
                             style: customFontStyle(midSizeFont, FontWeight.w500,
                                 whiteColorRegular),
