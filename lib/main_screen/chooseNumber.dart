@@ -1,5 +1,4 @@
 // ignore_for_file: must_be_immutable
-import 'package:ai_frontend/initial_data.dart';
 import 'package:ai_frontend/main_screen/choose_number_text.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +27,6 @@ class _chooseNumberState extends State<ChooseNumber> {
         value: widget.props,
         onChanged: (value) {
           chooseNumberOfPictures(value);
-          print(numberOfPictures);
         },
       ),      ChooseNumberText(props: widget.props),
 

@@ -12,13 +12,12 @@ class GalleryScreen extends StatelessWidget {
     return Scaffold(
       appBar: Header(),
       body: Body(
-          child: Text(
-            "Hello",
-            style: customFontStyle(30, FontWeight.w400, whiteColorRegular),
+          child: Column(
+            children: [],
           ),
           gradientRange: mainScreenGradientRange,
           gradientColors: mainScreenGradientColors),
-          bottomNavigationBar: Footer(),
+      bottomNavigationBar: Footer(),
     );
   }
 }

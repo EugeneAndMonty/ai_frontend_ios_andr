@@ -84,3 +84,26 @@ double numberOfPictures = 1;
   }
 ];
 
+
+List<Map> test_map = [
+  {
+    'title': 'A',
+    'size': [{'array': ['hello', 'welcome']}]
+  },
+  {
+    'title': 'B',
+    'size': [{'array': ['yes', 'no', 'past']}]
+  },
+  {
+    'title': 'C',
+    'size': [{'array': ['hi', 'lol']}]
+  },
+  {
+    'title': 'D',
+    'size': [{'array': ['bye', 'welcome', 'A2', 'Colorado']}]
+  },
+  {
+    'title': 'E',
+    'size': [{'array': ['text', 'welcome']}]
+  },
+];
